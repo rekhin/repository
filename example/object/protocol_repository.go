@@ -12,10 +12,9 @@ type ProtocolRepository interface {
 }
 
 type Protocol interface {
-	Node
-	GettProtocolID() ProtocolID
-	GetDeviceID() DeviceID
-	GetState() State
+	GetProtocolID() ProtocolID
+	GetName() string
+	GetSort() int
 }
 
 type ProtocolID int

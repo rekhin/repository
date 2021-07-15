@@ -13,11 +13,13 @@ type DeviceRepository interface {
 
 type Device interface {
 	Node
-	DeviceID() DeviceID
+	GetDeviceID() DeviceID
+	GetObjectID() ObjectID
+	GetSourceIDs() []SourceID
 	GetState() State
 }
 
-type DeviceID int
+type DeviceID interface{}
 
 type State int
 

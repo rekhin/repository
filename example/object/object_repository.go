@@ -13,7 +13,8 @@ type ObjectRepository interface {
 
 type Object interface {
 	Node
-	ObjectID() ObjectID
+	GetObjectID() ObjectID
+	GetParentObjectID() ObjectID
 }
 
-type ObjectID int
+type ObjectID interface{}
