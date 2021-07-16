@@ -14,7 +14,6 @@ type ProtocolRepository interface {
 type Protocol interface {
 	GetProtocolID() ProtocolID
 	GetName() string
-	GetSort() int
 }
 
-type ProtocolID int
+type ProtocolID interface{}

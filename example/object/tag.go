@@ -40,17 +40,16 @@ const (
 	Profile1Hour    Profile = hour
 	Profile1Day     Profile = day
 	Profile1Week    Profile = week
-	Profile1Month   Profile = Profile(month)
-	Profile1Year    Profile = Profile(year)
+	Profile1Month   Profile = month
+	Profile1Year    Profile = year
 )
 
-type second int
-
 const (
-	minute = 60
+	second = 1
+	minute = 60 * second
 	hour   = 60 * minute
 	day    = 24 * hour
 	week   = 7 * day
-	month  = int(year / 12)
-	year   = int(365.2425 * day)
+	month  = year / 12
+	year   = 365.2425 * day
 )

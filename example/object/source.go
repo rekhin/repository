@@ -13,6 +13,7 @@ type SourceRepository interface {
 
 type Source interface {
 	GetSourceID() SourceID
+	GetProtocolID() ProtocolID
 	GetDeviceIDs() []DeviceID
 	GetState() State
 }

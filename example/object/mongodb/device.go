@@ -1,14 +1,38 @@
 package mongodb
 
-import "github.com/rekhin/repository/example/object"
+import (
+	"context"
+	"fmt"
+
+	"github.com/rekhin/repository/example/object"
+)
+
+type DeviceRepository struct{}
+
+func NewDeviceRepository() *DeviceRepository {
+	return &DeviceRepository{}
+}
+
+func (r *DeviceRepository) ReadDevice(context.Context, *[]object.Device) error {
+	return fmt.Errorf("not implemented")
+}
+func (r *DeviceRepository) CreateDevice(context.Context, ...object.Device) error {
+	return fmt.Errorf("not implemented")
+}
+func (r *DeviceRepository) UpdateDevice(context.Context, ...object.Device) error {
+	return fmt.Errorf("not implemented")
+}
+func (r *DeviceRepository) DeleteDevice(context.Context, ...object.DeviceID) error {
+	return fmt.Errorf("not implemented")
+}
 
 type Device struct {
 	ID        DeviceID
 	ObjectID  object.ObjectID
 	Name      string
 	SourceIDs []SourceID
-	Sort      int
 	State     object.State
+	Sort      int
 }
 
 func (o Device) GetNodeID() object.NodeID        { return o.ID }
@@ -31,12 +55,3 @@ func convertSourceIDs(from []SourceID) []object.SourceID {
 var _ object.Device = Device{}
 
 type DeviceID int
-
-// TODO move to protocol.go
-type ProtocolID int
-
-// TODO move to source.go
-type SourceID struct {
-	DeviceID
-	ProtocolID
-}
